@@ -44,7 +44,7 @@ private Long id;
             private String ppr;
             @Column(length = 500)
             private String naissance;
-            @JsonFormat(pattern="yyyy-MM-dd")
+            @JsonFormat(pattern="MM-dd-yyyy")
             @Temporal(TemporalType.DATE)
             private Date dateNaissance ;
             @Column(length = 500)
@@ -75,10 +75,19 @@ private Long id;
             private String aff2;
             @Column(length = 500)
             private String nval;
+            @Column(length = 500)
+            private String dtNaissance;
 
 
+    public String getDtNaissance() {
+        return dtNaissance;
+    }
 
-public ImpressionCarte(){
+    public void setDtNaissance(String dtNaissance) {
+        this.dtNaissance = dtNaissance;
+    }
+
+    public ImpressionCarte(){
 super();
 }
 
