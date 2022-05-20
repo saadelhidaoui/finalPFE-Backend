@@ -65,19 +65,19 @@ public class ExcelHelper {
                             carte.setPrenom(s4);
                             break;
                         case 5:
-                            DataFormatter formatter5 = new DataFormatter();
-                            String s5 = formatter5.formatCellValue(currentCell);
-                            carte.setNomprenomar(s5);
+//                            DataFormatter formatter5 = new DataFormatter();
+//                            String s5 = formatter5.formatCellValue(currentCell);
+                            carte.setNomprenomar(currentCell.getStringCellValue());
                             break;
                         case 6:
-                            DataFormatter formatter6 = new DataFormatter();
-                            String s6 = formatter6.formatCellValue(currentCell);
-                            carte.setNomAr(s6);
+//                            DataFormatter formatter6 = new DataFormatter();
+//                            String s6 = formatter6.formatCellValue(currentCell);
+                            carte.setNomAr(currentCell.getStringCellValue());
                             break;
                         case 7:
-                            DataFormatter formatter7 = new DataFormatter();
-                            String s7 = formatter7.formatCellValue(currentCell);
-                            carte.setPrenomAr(s7);
+//                            DataFormatter formatter7 = new DataFormatter();
+//                            String s7 = formatter7.formatCellValue(currentCell);
+                            carte.setPrenomAr(currentCell.getStringCellValue());
                             break;
                         case 8:
                             DataFormatter formatter8 = new DataFormatter();
