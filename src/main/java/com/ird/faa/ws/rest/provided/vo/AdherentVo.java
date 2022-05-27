@@ -21,11 +21,11 @@ public class AdherentVo {
     private String dateReception ;
     private String numeroMatricule ;
     private String emailPrincipale ;
-    private Boolean credentialsNonExpired ;
-    private Boolean enabled ;
-    private Boolean accountNonExpired ;
-    private Boolean accountNonLocked ;
-    private Boolean passwordChanged ;
+    private Boolean credentialsNonExpired  = false ;
+    private Boolean enabled =true;
+    private Boolean accountNonExpired = false ;
+    private Boolean accountNonLocked = false  ;
+    private Boolean passwordChanged  = false ;
     private String createdAt ;
     private String updatedAt ;
     private String username ;

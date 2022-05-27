@@ -1,215 +1,226 @@
-package  com.ird.faa.ws.rest.provided.vo;
+package com.ird.faa.ws.rest.provided.vo;
 
-    import java.util.List;
-    import java.util.Date;
-    import javax.persistence.Temporal;
-    import javax.persistence.TemporalType;
-    import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.List;
 
 public class ModerateurVo {
 
-    private String id ;
-    private String numeroMatricule ;
-    private String emailPrincipale ;
-    private Boolean credentialsNonExpired ;
-    private Boolean enabled ;
-    private Boolean accountNonExpired ;
-    private Boolean accountNonLocked ;
-    private Boolean passwordChanged ;
-    private String createdAt ;
-    private String updatedAt ;
-    private String username ;
-    private String password ;
-    private String prenom ;
-    private String nom ;
-    private String role ;
+    private String id;
+    private String numeroMatricule;
+    private String emailPrincipale;
+    private Boolean credentialsNonExpired = false;
+    private Boolean enabled = true;
+    private Boolean accountNonExpired = false;
+    private Boolean accountNonLocked = false;
+    private Boolean passwordChanged = false;
+    private String createdAt;
+    private String updatedAt;
+    private String username;
+    private String password;
+    private String prenom;
+    private String nom;
+    private String role;
 
 
-            private String createdAtMax ;
-            private String createdAtMin ;
-            private String updatedAtMax ;
-            private String updatedAtMin ;
+    private String createdAtMax;
+    private String createdAtMin;
+    private String updatedAtMax;
+    private String updatedAtMin;
 
-        private SituationModerateurVo situationModerateurVo ;
-        private ProfilVo profilVo ;
+    private SituationModerateurVo situationModerateurVo;
+    private ProfilVo profilVo;
 
-    private List<MissionVo> missionsVo ;
-    private List<TacheVo> tachesVo ;
+    private List<MissionVo> missionsVo;
+    private List<TacheVo> tachesVo;
 
-    public ModerateurVo(){
-    super();
+    public ModerateurVo() {
+        super();
     }
 
-        public String getId(){
+    public String getId() {
         return this.id;
-        }
+    }
 
-        public void setId(String id){
+    public void setId(String id) {
         this.id = id;
-        }
-        public String getNumeroMatricule(){
+    }
+
+    public String getNumeroMatricule() {
         return this.numeroMatricule;
-        }
+    }
 
-        public void setNumeroMatricule(String numeroMatricule){
+    public void setNumeroMatricule(String numeroMatricule) {
         this.numeroMatricule = numeroMatricule;
-        }
-        public String getEmailPrincipale(){
+    }
+
+    public String getEmailPrincipale() {
         return this.emailPrincipale;
-        }
+    }
 
-        public void setEmailPrincipale(String emailPrincipale){
+    public void setEmailPrincipale(String emailPrincipale) {
         this.emailPrincipale = emailPrincipale;
-        }
-        public Boolean getCredentialsNonExpired(){
+    }
+
+    public Boolean getCredentialsNonExpired() {
         return this.credentialsNonExpired;
-        }
+    }
 
-        public void setCredentialsNonExpired(Boolean credentialsNonExpired){
+    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
         this.credentialsNonExpired = credentialsNonExpired;
-        }
-        public Boolean getEnabled(){
+    }
+
+    public Boolean getEnabled() {
         return this.enabled;
-        }
+    }
 
-        public void setEnabled(Boolean enabled){
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
-        }
-        public Boolean getAccountNonExpired(){
+    }
+
+    public Boolean getAccountNonExpired() {
         return this.accountNonExpired;
-        }
+    }
 
-        public void setAccountNonExpired(Boolean accountNonExpired){
+    public void setAccountNonExpired(Boolean accountNonExpired) {
         this.accountNonExpired = accountNonExpired;
-        }
-        public Boolean getAccountNonLocked(){
+    }
+
+    public Boolean getAccountNonLocked() {
         return this.accountNonLocked;
-        }
+    }
 
-        public void setAccountNonLocked(Boolean accountNonLocked){
+    public void setAccountNonLocked(Boolean accountNonLocked) {
         this.accountNonLocked = accountNonLocked;
-        }
-        public Boolean getPasswordChanged(){
+    }
+
+    public Boolean getPasswordChanged() {
         return this.passwordChanged;
-        }
+    }
 
-        public void setPasswordChanged(Boolean passwordChanged){
+    public void setPasswordChanged(Boolean passwordChanged) {
         this.passwordChanged = passwordChanged;
-        }
-        public String getCreatedAt(){
+    }
+
+    public String getCreatedAt() {
         return this.createdAt;
-        }
+    }
 
-        public void setCreatedAt(String createdAt){
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
-        }
-        public String getUpdatedAt(){
+    }
+
+    public String getUpdatedAt() {
         return this.updatedAt;
-        }
+    }
 
-        public void setUpdatedAt(String updatedAt){
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
-        }
-        public String getUsername(){
+    }
+
+    public String getUsername() {
         return this.username;
-        }
+    }
 
-        public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
-        }
-        public String getPassword(){
+    }
+
+    public String getPassword() {
         return this.password;
-        }
+    }
 
-        public void setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
-        }
-        public String getPrenom(){
+    }
+
+    public String getPrenom() {
         return this.prenom;
-        }
+    }
 
-        public void setPrenom(String prenom){
+    public void setPrenom(String prenom) {
         this.prenom = prenom;
-        }
-        public String getNom(){
+    }
+
+    public String getNom() {
         return this.nom;
-        }
+    }
 
-        public void setNom(String nom){
+    public void setNom(String nom) {
         this.nom = nom;
-        }
-        public String getRole(){
+    }
+
+    public String getRole() {
         return this.role;
-        }
+    }
 
-        public void setRole(String role){
+    public void setRole(String role) {
         this.role = role;
-        }
+    }
 
 
-            public String getCreatedAtMax(){
-            return this.createdAtMax;
-            }
+    public String getCreatedAtMax() {
+        return this.createdAtMax;
+    }
 
-            public String getCreatedAtMin(){
-            return this.createdAtMin;
-            }
+    public String getCreatedAtMin() {
+        return this.createdAtMin;
+    }
 
-            public void setCreatedAtMax(String createdAtMax){
-            this.createdAtMax = createdAtMax;
-            }
+    public void setCreatedAtMax(String createdAtMax) {
+        this.createdAtMax = createdAtMax;
+    }
 
-            public void setCreatedAtMin(String createdAtMin){
-            this.createdAtMin = createdAtMin;
-            }
+    public void setCreatedAtMin(String createdAtMin) {
+        this.createdAtMin = createdAtMin;
+    }
 
-            public String getUpdatedAtMax(){
-            return this.updatedAtMax;
-            }
+    public String getUpdatedAtMax() {
+        return this.updatedAtMax;
+    }
 
-            public String getUpdatedAtMin(){
-            return this.updatedAtMin;
-            }
+    public String getUpdatedAtMin() {
+        return this.updatedAtMin;
+    }
 
-            public void setUpdatedAtMax(String updatedAtMax){
-            this.updatedAtMax = updatedAtMax;
-            }
+    public void setUpdatedAtMax(String updatedAtMax) {
+        this.updatedAtMax = updatedAtMax;
+    }
 
-            public void setUpdatedAtMin(String updatedAtMin){
-            this.updatedAtMin = updatedAtMin;
-            }
+    public void setUpdatedAtMin(String updatedAtMin) {
+        this.updatedAtMin = updatedAtMin;
+    }
 
 
-        public SituationModerateurVo getSituationModerateurVo(){
+    public SituationModerateurVo getSituationModerateurVo() {
         return this.situationModerateurVo;
-        }
+    }
 
-        public void setSituationModerateurVo(SituationModerateurVo situationModerateurVo){
+    public void setSituationModerateurVo(SituationModerateurVo situationModerateurVo) {
         this.situationModerateurVo = situationModerateurVo;
-        }
-        public ProfilVo getProfilVo(){
+    }
+
+    public ProfilVo getProfilVo() {
         return this.profilVo;
-        }
+    }
 
-        public void setProfilVo(ProfilVo profilVo){
+    public void setProfilVo(ProfilVo profilVo) {
         this.profilVo = profilVo;
-        }
+    }
 
 
-        public List<MissionVo> getMissionsVo(){
+    public List<MissionVo> getMissionsVo() {
         return this.missionsVo;
-        }
+    }
 
-        public void setMissionsVo(List<MissionVo> missionsVo){
-            this.missionsVo = missionsVo;
-            }
+    public void setMissionsVo(List<MissionVo> missionsVo) {
+        this.missionsVo = missionsVo;
+    }
 
-        public List<TacheVo> getTachesVo(){
+    public List<TacheVo> getTachesVo() {
         return this.tachesVo;
-        }
+    }
 
-        public void setTachesVo(List<TacheVo> tachesVo){
-            this.tachesVo = tachesVo;
-            }
+    public void setTachesVo(List<TacheVo> tachesVo) {
+        this.tachesVo = tachesVo;
+    }
 
-            }
+}

@@ -99,12 +99,12 @@ public PieceJointeEstivage findByIdWithAssociatedList(Long id){
 
     @Override
     public int deleteByDemandeEstivageId(Long id) {
-        return deleteByDemandeEstivageId(id);
+        return 1;
     }
 
     @Override
     public List<PieceJointeEstivage> findByDemandeEstivageId(Long id) {
-        return findByDemandeEstivageId(id);
+        return null;
     }
 
 

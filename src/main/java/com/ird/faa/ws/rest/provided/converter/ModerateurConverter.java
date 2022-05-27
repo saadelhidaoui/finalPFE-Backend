@@ -40,11 +40,7 @@ Moderateur item = new Moderateur();
         item.setNumeroMatricule(vo.getNumeroMatricule());
         if(StringUtil.isNotEmpty(vo.getEmailPrincipale()))
         item.setEmailPrincipale(vo.getEmailPrincipale());
-            item.setCredentialsNonExpired(vo.getCredentialsNonExpired());
-            item.setEnabled(vo.getEnabled());
-            item.setAccountNonExpired(vo.getAccountNonExpired());
-            item.setAccountNonLocked(vo.getAccountNonLocked());
-            item.setPasswordChanged(vo.getPasswordChanged());
+
         if(StringUtil.isNotEmpty(vo.getCreatedAt()))
         item.setCreatedAt(DateUtil.parse(vo.getCreatedAt()));
         if(StringUtil.isNotEmpty(vo.getUpdatedAt()))
