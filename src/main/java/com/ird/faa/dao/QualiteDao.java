@@ -17,6 +17,7 @@ public interface QualiteDao extends JpaRepository<Qualite,Long> {
 
     int deleteByReference(String reference);
 
+    Qualite findByLibelle(String libelle);
 
 
 }

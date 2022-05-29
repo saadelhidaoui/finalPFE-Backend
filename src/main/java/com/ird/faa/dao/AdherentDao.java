@@ -50,5 +50,7 @@ public interface AdherentDao extends JpaRepository<Adherent,Long> {
 
     int deleteByFonctionId(Long id);
 
+    Adherent findByCin(String cin);
+
 
 }

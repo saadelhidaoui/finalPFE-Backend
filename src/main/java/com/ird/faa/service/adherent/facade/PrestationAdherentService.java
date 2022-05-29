@@ -72,7 +72,7 @@ public interface PrestationAdherentService extends AbstractService<Prestation,Lo
     */
     int deleteByReference(String reference);
 
-
+    public List<Prestation> findByAdherentCin(String cin);
 
 
     Prestation archiver(Prestation prestation) ;

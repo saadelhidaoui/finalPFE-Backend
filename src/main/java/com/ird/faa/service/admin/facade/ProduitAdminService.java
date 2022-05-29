@@ -50,4 +50,7 @@ public interface ProduitAdminService extends AbstractService<Produit,Long,Produi
     Produit archiver(Produit produit) ;
     Produit desarchiver(Produit produit);
 
+    Produit addQuantite(Produit produit);
+
+    Produit substractQuantite(Produit produit);
 }

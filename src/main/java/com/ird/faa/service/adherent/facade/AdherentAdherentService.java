@@ -1,5 +1,6 @@
 package com.ird.faa.service.adherent.facade;
 
+import java.text.ParseException;
 import java.util.List;
 import com.ird.faa.bean.Adherent;
 import com.ird.faa.ws.rest.provided.vo.AdherentVo;
@@ -82,5 +83,7 @@ public interface AdherentAdherentService extends AbstractService<Adherent,Long,A
 
     Adherent archiver(Adherent adherent) ;
     Adherent desarchiver(Adherent adherent);
+
+    public int save2(AdherentVo adherentVo) throws ParseException ;
 
 }

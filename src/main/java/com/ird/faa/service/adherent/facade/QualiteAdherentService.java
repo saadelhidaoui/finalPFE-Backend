@@ -43,7 +43,7 @@ public interface QualiteAdherentService extends AbstractService<Qualite,Long,Qua
     * @return 1 if Qualite deleted successfully
     */
     int deleteByReference(String reference);
-
+    Qualite findByLibelle(String Libelle);
 
 
 

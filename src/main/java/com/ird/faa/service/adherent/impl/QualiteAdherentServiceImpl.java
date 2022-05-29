@@ -154,8 +154,8 @@ qualites.forEach(e->qualiteDao.save(e));
 }
 }
 
-
-
-
-
+    @Override
+    public Qualite findByLibelle(String libelle) {
+        return qualiteDao.findByLibelle(libelle);
     }
+}

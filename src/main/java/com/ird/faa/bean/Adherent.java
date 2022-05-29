@@ -1,6 +1,7 @@
 package com.ird.faa.bean;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ird.faa.security.bean.User;
 
 import javax.persistence.*;
@@ -93,17 +94,15 @@ public class Adherent extends User implements Archivable {
     private Statut statut;
     @ManyToOne
     private Fonction fonction;
-
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "adherent")
     private List<Conjoint> conjoints;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "adherent")
     private List<Enfant> enfants;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "adherent")
     private List<PieceJointeAdherent> pieceJointeAdherents;
-
-
-
-
 
 
     public Adherent() {
