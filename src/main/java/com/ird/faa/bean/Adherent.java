@@ -19,6 +19,7 @@ public class Adherent extends User implements Archivable {
         super(username);
     }
 
+
     @Column(length = 500)
     private String numAdhesion;
     @Column(length = 500)
