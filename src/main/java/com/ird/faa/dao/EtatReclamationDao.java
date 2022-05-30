@@ -18,5 +18,5 @@ public interface EtatReclamationDao extends JpaRepository<EtatReclamation,Long> 
     int deleteByReference(String reference);
 
 
-
+    EtatReclamation findByLibelle(String libelle);
 }

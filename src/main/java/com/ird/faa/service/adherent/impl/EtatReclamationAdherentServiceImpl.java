@@ -44,6 +44,12 @@ public List<EtatReclamation> findAll(){
     public int deleteByReference(String  reference) {
     return etatReclamationDao.deleteByReference(reference);
     }
+
+    @Override
+    public EtatReclamation findByLibelle(String libelle) {
+        return etatReclamationDao.findByLibelle(libelle);
+    }
+
     @Override
     public EtatReclamation findByIdOrReference(EtatReclamation etatReclamation){
     EtatReclamation resultat=null;
