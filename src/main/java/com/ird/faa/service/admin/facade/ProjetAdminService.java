@@ -1,9 +1,11 @@
 package com.ird.faa.service.admin.facade;
 
+import java.io.IOException;
 import java.util.List;
 import com.ird.faa.bean.Projet;
 import com.ird.faa.ws.rest.provided.vo.ProjetVo;
 import com.ird.faa.service.core.facade.AbstractService;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface ProjetAdminService extends AbstractService<Projet,Long,ProjetVo>{
 
@@ -26,7 +28,9 @@ public interface ProjetAdminService extends AbstractService<Projet,Long,ProjetVo
     Projet findByIdOrReference(Projet projet);
 
 
-/**
+
+
+    /**
     * delete Projet from database
     * @param id - id of Projet to be deleted
     *

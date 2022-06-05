@@ -1,8 +1,9 @@
-package com.ird.faa.impressionCarteExcel.excelMessage;
+package com.ird.faa.importExcel.adherentExcel.excelMessageAdherent;
 
-public class ResponseMessage {
+
+public class ResponseMessageAdherent {
     private String message;
-    public ResponseMessage(String message) {
+    public ResponseMessageAdherent(String message) {
         this.message = message;
     }
     public String getMessage() {

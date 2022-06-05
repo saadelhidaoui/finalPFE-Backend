@@ -48,8 +48,13 @@ public List<Ville> findAll(){
         return villeDao.deleteByRegionId(id);
         }
 
+    @Override
+    public Ville findByReference(String reference) {
+        return villeDao.findByReference(reference);
+    }
 
-@Override
+
+    @Override
 public Ville findById(Long id){
 if(id==null) return null;
 return villeDao.getOne(id);

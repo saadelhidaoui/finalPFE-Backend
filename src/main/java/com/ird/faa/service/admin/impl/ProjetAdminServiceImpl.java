@@ -16,7 +16,6 @@ import com.ird.faa.ws.rest.provided.vo.ProjetVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
@@ -130,6 +129,8 @@ public class ProjetAdminServiceImpl extends AbstractServiceImpl<Projet> implemen
         projetDao.save(projet);
         return projet;
     }
+
+
 
     private void findAssociatedLists(Projet projet) {
         if (projet != null && projet.getId() != null) {
@@ -307,6 +308,7 @@ public class ProjetAdminServiceImpl extends AbstractServiceImpl<Projet> implemen
             pieceJointeProjet.forEach(e -> e.setProjet(projet));
         }
     }
+
 
 
 }

@@ -12,7 +12,7 @@ public interface VilleDao extends JpaRepository<Ville,Long> {
 
 
 
-
+    Ville findByReference(String reference);
 
 
     List<Ville> findByRegionId(Long id);

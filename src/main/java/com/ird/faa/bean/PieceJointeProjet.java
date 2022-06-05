@@ -18,6 +18,8 @@ public class PieceJointeProjet implements Archivable {
     private Long id;
 
     @Column(length = 500)
+    private String reference;
+    @Column(length = 500)
     private String path;
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
@@ -41,6 +43,14 @@ public class PieceJointeProjet implements Archivable {
 
     @Lob
     private byte[] data;
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
     public byte[] getData() {
         return data;

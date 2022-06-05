@@ -21,5 +21,5 @@ public interface PieceJointeProjetDao extends JpaRepository<PieceJointeProjet,Lo
 
     int deleteByProjetId(Long id);
 
-
+    PieceJointeProjet findByReference(String reference);
 }

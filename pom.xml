@@ -11,7 +11,7 @@
 	<groupId>com.ird</groupId>
 	<artifactId>faa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>faa</name>
+	<name>fondation</name>
 	<description>Demo project generated</description>
 
 	<properties>

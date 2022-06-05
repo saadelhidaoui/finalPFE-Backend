@@ -106,6 +106,34 @@ public class Adherent extends User implements Archivable {
     private List<PieceJointeAdherent> pieceJointeAdherents;
 
 
+    private String dtNaissance;
+    private String dtArrivee;
+    private String dtReception;
+
+    public String getDtNaissance() {
+        return dtNaissance;
+    }
+
+    public void setDtNaissance(String dtNaissance) {
+        this.dtNaissance = dtNaissance;
+    }
+
+    public String getDtArrivee() {
+        return dtArrivee;
+    }
+
+    public void setDtArrivee(String dtArrivee) {
+        this.dtArrivee = dtArrivee;
+    }
+
+    public String getDtReception() {
+        return dtReception;
+    }
+
+    public void setDtReception(String dtReception) {
+        this.dtReception = dtReception;
+    }
+
     public Adherent() {
         super();
     }

@@ -24,9 +24,5 @@ public interface VilleAdminService extends AbstractService<Ville,Long,VilleVo>{
     int deleteByRegionId(Long id);
 
 
-
-
-
-
-
+    Ville findByReference(String reference);
 }

@@ -17,6 +17,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -212,29 +214,64 @@ public class PieceJointeProjetAdminServiceImpl extends AbstractServiceImpl<Piece
         }
     }
 
+//    @Override
+//    public void uploadFile(MultipartFile file, String projetRef) throws IOException {
+//        PieceJointeProjet pieceJointeProjet = new PieceJointeProjet();
+//        System.out.println(file.getOriginalFilename());
+//        String path = System.getProperty("user.home") + "\\projet-pieces-jointes\\";
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//        pieceJointeProjet.setPath(path + fileName);
+//        pieceJointeProjet.setData(file.getBytes());
+//        pieceJointeProjet.setLibelle(fileName);
+////        pieceJointeProjet.setType(file.getContentType());
+//        Projet projet = projetService.findByReference(projetRef);
+//        List<PieceJointeProjet>  ds =new ArrayList<>();
+//        ds.add(pieceJointeProjet);
+//        projet.setPieceJointeProjets(ds);
+////        projet.setPieceJointeProjets(pieceJointeProjet);
+//        pieceJointeProjet.setProjet(projet);
+//        pieceJointeProjetDao.save(pieceJointeProjet);
+//        projetService.save(projet);
+//
+//    }
+
+//    @Override
+//    public PieceJointeProjet getFile(Long id) {
+//        return pieceJointeProjetDao.findById(id).get();
+//    }
+
     @Override
-    public void uploadFile(MultipartFile file, String projetRef) throws IOException {
+    public Projet findByReference(String reference) {
+        return findByReference(reference);
+    }
+
+    @Override
+    public void uploadFile(MultipartFile file, String reference) throws IOException {
         PieceJointeProjet pieceJointeProjet = new PieceJointeProjet();
-        System.out.println(file.getOriginalFilename());
         String path = System.getProperty("user.home") + "\\projet-pieces-jointes\\";
+        File path1 = new File(System.getProperty("user.home") + "\\projet-pieces-jointes\\" + file.getOriginalFilename());
+        File dir = new File(path);
+        if (!dir.exists() ){
+            dir.mkdir();
+        }
+        path1.createNewFile();
+        FileOutputStream output = new FileOutputStream(path1);
+        output.write(file.getBytes());
+        output.close();
+
+
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         pieceJointeProjet.setPath(path + fileName);
         pieceJointeProjet.setData(file.getBytes());
-        pieceJointeProjet.setLibelle(fileName);
-//        pieceJointeProjet.setType(file.getContentType());
-        Projet projet = projetService.findByReference(projetRef);
+//        demandePieceJointe.setName(fileName);
+//        demandePieceJointe.setType(file.getContentType());
+        Projet projet = projetService.findByReference(reference);
         List<PieceJointeProjet>  ds =new ArrayList<>();
         ds.add(pieceJointeProjet);
         projet.setPieceJointeProjets(ds);
-//        projet.setPieceJointeProjets(pieceJointeProjet);
         pieceJointeProjet.setProjet(projet);
         pieceJointeProjetDao.save(pieceJointeProjet);
         projetService.save(projet);
 
-    }
-
-    @Override
-    public PieceJointeProjet getFile(Long id) {
-        return pieceJointeProjetDao.findById(id).get();
     }
 }

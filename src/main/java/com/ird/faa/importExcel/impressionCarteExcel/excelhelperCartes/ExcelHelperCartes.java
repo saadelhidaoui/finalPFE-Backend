@@ -1,15 +1,14 @@
-package com.ird.faa.impressionCarteExcel.excelhelper;
+package com.ird.faa.importExcel.impressionCarteExcel.excelhelperCartes;
 
 import com.ird.faa.bean.ImpressionCarte;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
-public class ExcelHelper {
+public class ExcelHelperCartes {
     public static String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     static String[] HEADERs = {"Id", "aff", "qualite", "nom", "prenom", "nomprenomar", "nomAr", "prenomAr", "cinn", "pprr", "ppr", "naissance", "dtNaissance", "photo", "cinnConjoint", "cinConjoint", "adherent", "nomAdherent", "prenomAdherent", "cinnAdherent", "cinAdherent", "pprrAdherent", "versocarte", "aff1", "aff2", "nval"};
     static String SHEET = "ImpressionCartes";
