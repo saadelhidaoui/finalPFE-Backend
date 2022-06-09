@@ -39,7 +39,10 @@ public class ReclamationAdherentServiceImpl extends AbstractServiceImpl<Reclamat
 
     @Autowired
     private EntityManager entityManager;
-
+    @Override
+    public List<Reclamation> findByAdherentUsername2(String username2) {
+        return reclamationDao.findByAdherentEmail(username2);
+    }
 
     @Override
     public List<Reclamation> findAll() {
@@ -217,21 +220,16 @@ public class ReclamationAdherentServiceImpl extends AbstractServiceImpl<Reclamat
     public Reclamation save(Reclamation reclamation) {
         prepareSave(reclamation);
 
-        Reclamation result = null;
-        Reclamation foundedReclamation = findByReference(reclamation.getReference());
-        if (foundedReclamation == null) {
 
+        findAdherent(reclamation);
+        findEtatReclamation(reclamation);
+        Reclamation savedReclamation = reclamationDao.save(reclamation);
 
-            findAdherent(reclamation);
-            findEtatReclamation(reclamation);
-            Reclamation savedReclamation = reclamationDao.save(reclamation);
+        savePieceJointeReclamations(savedReclamation, reclamation.getPieceJointeReclamations());
+        EtatReclamation etatReclamation = etatReclamationService.findByLibelle("En cours");
+        reclamation.setEtatReclamation(etatReclamation);
+        Reclamation result = savedReclamation;
 
-            savePieceJointeReclamations(savedReclamation, reclamation.getPieceJointeReclamations());
-            EtatReclamation etatReclamation = etatReclamationService.findByLibelle("En cours");
-            reclamation.setEtatReclamation(etatReclamation);
-            result = savedReclamation;
-
-        }
 
         return result;
     }

@@ -26,7 +26,9 @@ public interface DemandeEstivageAdherentService extends AbstractService<DemandeE
     DemandeEstivage findByIdOrReference(DemandeEstivage demandeEstivage);
 
 
-/**
+    List<DemandeEstivage> findByAdherentUsername2(String username2);
+
+    /**
     * delete DemandeEstivage from database
     * @param id - id of DemandeEstivage to be deleted
     *

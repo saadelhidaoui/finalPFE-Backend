@@ -259,11 +259,10 @@ public class PieceJointeProjetAdminServiceImpl extends AbstractServiceImpl<Piece
         output.write(file.getBytes());
         output.close();
 
-
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         pieceJointeProjet.setPath(path + fileName);
         pieceJointeProjet.setData(file.getBytes());
-//        demandePieceJointe.setName(fileName);
+        pieceJointeProjet.setLibelle(fileName);
 //        demandePieceJointe.setType(file.getContentType());
         Projet projet = projetService.findByReference(reference);
         List<PieceJointeProjet>  ds =new ArrayList<>();
@@ -273,5 +272,10 @@ public class PieceJointeProjetAdminServiceImpl extends AbstractServiceImpl<Piece
         pieceJointeProjetDao.save(pieceJointeProjet);
         projetService.save(projet);
 
+    }
+
+    @Override
+    public PieceJointeProjet getFile(Long id) {
+        return pieceJointeProjetDao.findById(id).get();
     }
 }

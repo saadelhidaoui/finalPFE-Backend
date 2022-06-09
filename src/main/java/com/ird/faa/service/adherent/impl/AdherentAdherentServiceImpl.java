@@ -10,6 +10,7 @@ import com.ird.faa.service.util.SearchUtil;
 import com.ird.faa.service.util.StringUtil;
 import com.ird.faa.ws.rest.provided.vo.AdherentVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +23,8 @@ import java.util.List;
 
 @Service
 public class AdherentAdherentServiceImpl extends AbstractServiceImpl<Adherent> implements AdherentAdherentService {
-
+    @Autowired
+    PasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private AdherentDao adherentDao;
 
@@ -227,6 +229,11 @@ public class AdherentAdherentServiceImpl extends AbstractServiceImpl<Adherent> i
         return adherent;
     }
 
+    @Override
+    public Adherent findByEmail(String email) {
+        return adherentDao.findByEmail(email);
+    }
+
     private void findAssociatedLists(Adherent adherent) {
         if (adherent != null && adherent.getId() != null) {
             List<Conjoint> conjoints = conjointService.findByAdherentId(adherent.getId());
@@ -341,11 +348,14 @@ public class AdherentAdherentServiceImpl extends AbstractServiceImpl<Adherent> i
         adherent.setCin(adherentVo.getCin());
         adherent.setNom(adherentVo.getNom());
         adherent.setPrenom(adherentVo.getPrenom());
-        adherent.setUsername(adherentVo.getUsername());
+        adherent.setNumAdhesion(adherentVo.getNumAdhesion());
+//        adherent.setUsername(adherentVo.getUsername());
         adherent.setTelephone(adherentVo.getTelephone());
+        adherent.setPassword(bCryptPasswordEncoder.encode(adherentVo.getPassword()));
         Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(adherentVo.getDateNaissance());
         adherent.setDateNaissance(date1);
-        //adherent.setEmail(adherentVo.getEmailPrincipale());
+        adherent.setEmail(adherentVo.getUsername());
+//        adherent.setNomprenom(adherentVo.getNomprenom());
         Qualite qualite = qualiteService.findByLibelle("En cours");
         adherent.setQualite(qualite);
         adherentDao.save(adherent);

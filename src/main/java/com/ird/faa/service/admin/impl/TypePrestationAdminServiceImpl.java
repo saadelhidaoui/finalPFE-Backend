@@ -44,6 +44,12 @@ public List<TypePrestation> findAll(){
     public int deleteByReference(String  reference) {
     return typePrestationDao.deleteByReference(reference);
     }
+
+    @Override
+    public TypePrestation findByLibelle(String libelle) {
+        return typePrestationDao.findByLibelle(libelle);
+    }
+
     @Override
     public TypePrestation findByIdOrReference(TypePrestation typePrestation){
     TypePrestation resultat=null;

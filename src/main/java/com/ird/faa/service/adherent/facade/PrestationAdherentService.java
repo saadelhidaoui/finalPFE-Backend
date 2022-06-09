@@ -73,6 +73,8 @@ public interface PrestationAdherentService extends AbstractService<Prestation,Lo
     int deleteByReference(String reference);
 
     public List<Prestation> findByAdherentCin(String cin);
+    public List<Prestation> findByAdherentUsername2(String username2);
+
 
 
     Prestation archiver(Prestation prestation) ;

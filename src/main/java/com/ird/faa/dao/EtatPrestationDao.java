@@ -18,5 +18,5 @@ public interface EtatPrestationDao extends JpaRepository<EtatPrestation,Long> {
     int deleteByReference(String reference);
 
 
-
+    EtatPrestation findByLibelle(String libelle);
 }

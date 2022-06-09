@@ -44,6 +44,12 @@ public List<NiveauImportance> findAll(){
     public int deleteByReference(String  reference) {
     return niveauImportanceDao.deleteByReference(reference);
     }
+
+    @Override
+    public NiveauImportance findByLibelle(String libelle) {
+        return niveauImportanceDao.findByLibelle(libelle);
+    }
+
     @Override
     public NiveauImportance findByIdOrReference(NiveauImportance niveauImportance){
     NiveauImportance resultat=null;

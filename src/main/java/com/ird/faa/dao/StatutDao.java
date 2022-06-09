@@ -18,5 +18,5 @@ public interface StatutDao extends JpaRepository<Statut,Long> {
     int deleteByReference(String reference);
 
 
-
+    Statut findByLibelle(String libelle);
 }

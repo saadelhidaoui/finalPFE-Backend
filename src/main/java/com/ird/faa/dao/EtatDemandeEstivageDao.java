@@ -18,5 +18,5 @@ public interface EtatDemandeEstivageDao extends JpaRepository<EtatDemandeEstivag
     int deleteByReference(String reference);
 
 
-
+    EtatDemandeEstivage findByLibelle(String libelle);
 }

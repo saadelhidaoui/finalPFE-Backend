@@ -45,7 +45,5 @@ public interface StatutAdminService extends AbstractService<Statut,Long,StatutVo
     int deleteByReference(String reference);
 
 
-
-
-
+    Statut findByLibelle(String libelle);
 }

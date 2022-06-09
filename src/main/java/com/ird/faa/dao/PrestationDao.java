@@ -16,6 +16,8 @@ public interface PrestationDao extends JpaRepository<Prestation, Long> {
 
     List<Prestation> findByAdherentCin(String cin);
 
+//    List<Prestation> findByAdherentUsername2(String username2);
+    List<Prestation> findByAdherentEmail(String email);
     Prestation findByReference(String reference);
 
     int deleteByReference(String reference);

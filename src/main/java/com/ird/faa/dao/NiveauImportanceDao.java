@@ -18,5 +18,5 @@ public interface NiveauImportanceDao extends JpaRepository<NiveauImportance,Long
     int deleteByReference(String reference);
 
 
-
+    NiveauImportance findByLibelle(String libelle);
 }

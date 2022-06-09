@@ -52,7 +52,7 @@ public class Prestation implements Archivable {
     private Boolean visible = false;
     @Column(length = 500)
     private String username;
-
+    private String dateArrivee;
     @ManyToOne
     private EtatPrestation etatPrestation;
     @ManyToOne
@@ -65,6 +65,42 @@ public class Prestation implements Archivable {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "prestation")
     private List<PieceJointePrestation> pieceJointePrestations;
+
+    private String nom;
+    private String prenom;
+    private String origine;
+
+    public String getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(String origine) {
+        this.origine = origine;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getDateArrivee() {
+        return dateArrivee;
+    }
+
+    public void setDateArrivee(String dateArrivee) {
+        this.dateArrivee = dateArrivee;
+    }
 
     public Prestation() {
         super();

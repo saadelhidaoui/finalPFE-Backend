@@ -11,9 +11,5 @@ import com.ird.faa.bean.Region;
 public interface RegionDao extends JpaRepository<Region,Long> {
 
 
-
-
-
-
-
+    Region findByReference(String reference);
 }

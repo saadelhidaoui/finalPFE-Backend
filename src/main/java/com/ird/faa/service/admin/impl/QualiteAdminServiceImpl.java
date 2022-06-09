@@ -44,6 +44,12 @@ public List<Qualite> findAll(){
     public int deleteByReference(String  reference) {
     return qualiteDao.deleteByReference(reference);
     }
+
+    @Override
+    public Qualite findByLibelle(String libelle) {
+        return qualiteDao.findByLibelle(libelle);
+    }
+
     @Override
     public Qualite findByIdOrReference(Qualite qualite){
     Qualite resultat=null;

@@ -1,6 +1,7 @@
 package com.ird.faa.service.adherent.facade;
 
 import java.util.List;
+
 import com.ird.faa.bean.Reclamation;
 import com.ird.faa.ws.rest.provided.vo.ReclamationVo;
 import com.ird.faa.service.core.facade.AbstractService;
@@ -33,6 +34,8 @@ public interface ReclamationAdherentService extends AbstractService<Reclamation,
     */
     int deleteById(Long id);
 
+
+    List<Reclamation> findByAdherentUsername2(String username2);
 
     List<Reclamation> findByAdherentNumeroMatricule(String numeroMatricule);
 

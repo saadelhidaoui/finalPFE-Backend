@@ -44,6 +44,12 @@ public List<EtatCarte> findAll(){
     public int deleteByReference(String  reference) {
     return etatCarteDao.deleteByReference(reference);
     }
+
+    @Override
+    public EtatCarte findByLibelle(String libelle) {
+        return etatCarteDao.findByLibelle(libelle);
+    }
+
     @Override
     public EtatCarte findByIdOrReference(EtatCarte etatCarte){
     EtatCarte resultat=null;

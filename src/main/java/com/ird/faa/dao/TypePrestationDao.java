@@ -18,5 +18,5 @@ public interface TypePrestationDao extends JpaRepository<TypePrestation,Long> {
     int deleteByReference(String reference);
 
 
-
+    TypePrestation findByLibelle(String libelle);
 }

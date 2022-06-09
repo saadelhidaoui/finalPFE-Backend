@@ -45,7 +45,5 @@ public interface EtatPrestationAdminService extends AbstractService<EtatPrestati
     int deleteByReference(String reference);
 
 
-
-
-
+    EtatPrestation findByLibelle(String libelle);
 }

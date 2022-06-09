@@ -45,7 +45,5 @@ public interface TypePrestationAdminService extends AbstractService<TypePrestati
     int deleteByReference(String reference);
 
 
-
-
-
+    TypePrestation findByLibelle(String libelle);
 }

@@ -20,4 +20,5 @@ public interface CentreEstivageDao extends JpaRepository<CentreEstivage,Long> {
     int deleteByVilleId(Long id);
 
 
+    CentreEstivage findByReference(String reference);
 }

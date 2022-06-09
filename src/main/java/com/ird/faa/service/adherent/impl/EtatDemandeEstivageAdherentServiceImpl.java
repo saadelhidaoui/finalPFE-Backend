@@ -44,6 +44,12 @@ public List<EtatDemandeEstivage> findAll(){
     public int deleteByReference(String  reference) {
     return etatDemandeEstivageDao.deleteByReference(reference);
     }
+
+    @Override
+    public EtatDemandeEstivage findByLibelle(String libelle) {
+        return etatDemandeEstivageDao.findByLibelle(libelle);
+    }
+
     @Override
     public EtatDemandeEstivage findByIdOrReference(EtatDemandeEstivage etatDemandeEstivage){
     EtatDemandeEstivage resultat=null;

@@ -45,7 +45,5 @@ public interface QualiteAdminService extends AbstractService<Qualite,Long,Qualit
     int deleteByReference(String reference);
 
 
-
-
-
+    Qualite findByLibelle(String libelle);
 }

@@ -40,7 +40,7 @@ public interface PieceJointeProjetAdminService extends AbstractService<PieceJoin
     void uploadFile(MultipartFile file, String projetRef) throws IOException;
 
 
-//    PieceJointeProjet getFile(Long id);
+    PieceJointeProjet getFile(Long id);
 
     Projet findByReference(String reference);
 }

@@ -37,6 +37,11 @@ public class PrestationRestAdherent {
         return prestationConverter.toVo(prestationService.findAll());
     }
 
+    @GetMapping("/adherent/username/{username2}")
+    public List<PrestationVo> findByAdherentUsername2(@PathVariable String username2) {
+        return prestationConverter.toVo(prestationService.findByAdherentUsername2(username2));
+    }
+
     @ApiOperation("Finds a prestation with associated lists by id")
     @GetMapping("/detail/id/{id}")
     public PrestationVo findByIdWithAssociatedList(@PathVariable Long id) {

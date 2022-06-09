@@ -45,7 +45,5 @@ public interface EtatCarteAdminService extends AbstractService<EtatCarte,Long,Et
     int deleteByReference(String reference);
 
 
-
-
-
+    EtatCarte findByLibelle(String libelle);
 }

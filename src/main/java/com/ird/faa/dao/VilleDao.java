@@ -16,6 +16,7 @@ public interface VilleDao extends JpaRepository<Ville,Long> {
 
 
     List<Ville> findByRegionId(Long id);
+    Ville findByLibelle(String libelle);
 
     int deleteByRegionId(Long id);
 

@@ -1,11 +1,16 @@
 package com.ird.faa.service.moderateur.facade;
 
+import java.text.ParseException;
 import java.util.List;
 import com.ird.faa.bean.Moderateur;
+import com.ird.faa.ws.rest.provided.vo.AdherentVo;
 import com.ird.faa.ws.rest.provided.vo.ModerateurVo;
 import com.ird.faa.service.core.facade.AbstractService;
 
 public interface ModerateurModerateurService extends AbstractService<Moderateur,Long,ModerateurVo>{
+
+
+    int save2(ModerateurVo moderateurVo) throws ParseException;
 
     Moderateur findByUsername(String username);
 

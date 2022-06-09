@@ -45,7 +45,5 @@ public interface FonctionAdminService extends AbstractService<Fonction,Long,Fonc
     int deleteByReference(String reference);
 
 
-
-
-
+    Fonction findByLibelle(String libelle);
 }

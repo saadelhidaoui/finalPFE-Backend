@@ -18,5 +18,5 @@ public interface FonctionDao extends JpaRepository<Fonction,Long> {
     int deleteByReference(String reference);
 
 
-
+    Fonction findByLibelle(String libelle);
 }

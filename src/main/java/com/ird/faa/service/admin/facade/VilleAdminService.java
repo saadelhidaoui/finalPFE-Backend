@@ -25,4 +25,6 @@ public interface VilleAdminService extends AbstractService<Ville,Long,VilleVo>{
 
 
     Ville findByReference(String reference);
+
+    Ville findByLibelle(String libelle);
 }

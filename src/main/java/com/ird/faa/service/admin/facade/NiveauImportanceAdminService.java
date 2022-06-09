@@ -45,7 +45,5 @@ public interface NiveauImportanceAdminService extends AbstractService<NiveauImpo
     int deleteByReference(String reference);
 
 
-
-
-
+    NiveauImportance findByLibelle(String libelle);
 }

@@ -19,7 +19,8 @@ public class Adherent extends User implements Archivable {
         super(username);
     }
 
-
+    @Column(length = 500)
+    private String reference;
     @Column(length = 500)
     private String numAdhesion;
     @Column(length = 500)
@@ -448,5 +449,11 @@ public class Adherent extends User implements Archivable {
         return Objects.hash(id);
     }
 
-}
+    public String getReference() {
+        return reference;
+    }
 
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+}

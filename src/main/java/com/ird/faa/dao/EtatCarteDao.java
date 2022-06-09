@@ -16,6 +16,7 @@ public interface EtatCarteDao extends JpaRepository<EtatCarte,Long> {
     EtatCarte findByReference(String reference);
 
     int deleteByReference(String reference);
+    EtatCarte findByLibelle(String libelle);
 
 
 

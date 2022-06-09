@@ -34,4 +34,5 @@ public interface ReclamationDao extends JpaRepository<Reclamation,Long> {
     int deleteByEtatReclamationId(Long id);
 
 
+    List<Reclamation> findByAdherentEmail(String emeil);
 }

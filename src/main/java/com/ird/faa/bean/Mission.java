@@ -166,6 +166,7 @@ super();
             this.username = username;
             }
 
+
         @Override
         public boolean equals(Object o) {
         if (this == o) return true;
@@ -179,5 +180,12 @@ super();
         return Objects.hash(id);
         }
 
+    public Ville getVille() {
+        return this.ville;
+    }
+
+    public void setVille(Ville ville) {
+        this.ville = ville;
+    }
 }
 

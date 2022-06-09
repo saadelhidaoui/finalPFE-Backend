@@ -1,5 +1,6 @@
 package com.ird.faa.dao;
 
+import com.ird.faa.bean.Prestation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
@@ -14,6 +15,7 @@ public interface DemandeEstivageDao extends JpaRepository<DemandeEstivage,Long> 
 
 
     DemandeEstivage findByReference(String reference);
+    List<DemandeEstivage> findByAdherentEmail(String email);
 
     int deleteByReference(String reference);
 

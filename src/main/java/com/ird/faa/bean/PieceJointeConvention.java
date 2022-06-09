@@ -44,9 +44,18 @@ private Long id;
 
     @ManyToOne
     private Convention convention ;
+    @Lob
+    private byte[] data;
 
+    public byte[] getData() {
+        return data;
+    }
 
-public PieceJointeConvention(){
+    public void setData(byte[] data) {
+        this.data = data;
+    }
+
+    public PieceJointeConvention(){
 super();
 }
 

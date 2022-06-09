@@ -45,7 +45,5 @@ public interface EtatDemandeEstivageAdherentService extends AbstractService<Etat
     int deleteByReference(String reference);
 
 
-
-
-
+    EtatDemandeEstivage findByLibelle(String libelle);
 }

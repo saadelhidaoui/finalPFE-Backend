@@ -122,13 +122,13 @@ public class PieceJointeProjetRestAdmin {
         pieceJointeProjetService.uploadFile(file,reference);
 
     }
-//    @GetMapping("/files/{id}")
-//    public ResponseEntity<byte[]> getFile(@PathVariable Long id) {
-//        PieceJointeProjet pieceJointeProjet = pieceJointeProjetService.getFile(id);
-//        return ResponseEntity.ok()
-//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + pieceJointeProjet.getLibelle() + "\"")
-//                .body(pieceJointeProjet.getData());
-//    }
+    @GetMapping("/files/{id}")
+    public ResponseEntity<byte[]> getFile(@PathVariable Long id) {
+        PieceJointeProjet pieceJointeProjet = pieceJointeProjetService.getFile(id);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + pieceJointeProjet.getLibelle() + "\"")
+                .body(pieceJointeProjet.getData());
+    }
 
 //    @PutMapping("/upload/projet/{reference}")
 //    public void uploadFile(@RequestParam("file") MultipartFile file, @PathVariable String reference) throws IOException {

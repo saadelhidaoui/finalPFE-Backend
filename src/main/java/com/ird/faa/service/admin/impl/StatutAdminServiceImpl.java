@@ -44,6 +44,12 @@ public List<Statut> findAll(){
     public int deleteByReference(String  reference) {
     return statutDao.deleteByReference(reference);
     }
+
+    @Override
+    public Statut findByLibelle(String libelle) {
+        return statutDao.findByLibelle(libelle);
+    }
+
     @Override
     public Statut findByIdOrReference(Statut statut){
     Statut resultat=null;

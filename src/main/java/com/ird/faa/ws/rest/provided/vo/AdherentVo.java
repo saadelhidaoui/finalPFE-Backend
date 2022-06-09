@@ -13,6 +13,7 @@ public class AdherentVo {
     private String telephone;
     private String adresse;
     private String ppr;
+    private String email;
     private String dateNaissance;
     private String dateArrivee;
     private String dateReception;
@@ -61,6 +62,32 @@ public class AdherentVo {
     private List<ConjointVo> conjointsVo;
     private List<EnfantVo> enfantsVo;
     private List<PieceJointeAdherentVo> pieceJointeAdherentsVo;
+    private String username2;
+    private String nomPrenom;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNomPrenom() {
+        return nomPrenom;
+    }
+
+    public void setNomPrenom(String nomPrenom) {
+        this.nomPrenom = nomPrenom;
+    }
+
+    public String getUsername2() {
+        return username2;
+    }
+
+    public void setUsername2(String username2) {
+        this.username2 = username2;
+    }
 
     public AdherentVo() {
         super();

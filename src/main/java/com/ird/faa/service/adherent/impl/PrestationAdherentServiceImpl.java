@@ -55,6 +55,11 @@ public class PrestationAdherentServiceImpl extends AbstractServiceImpl<Prestatio
     }
 
     @Override
+    public List<Prestation> findByAdherentUsername2(String username2) {
+        return prestationDao.findByAdherentEmail(username2);
+    }
+
+    @Override
     public List<Prestation> findByEtatPrestationReference(String reference) {
         return prestationDao.findByEtatPrestationReference(reference);
     }
@@ -284,6 +289,8 @@ public class PrestationAdherentServiceImpl extends AbstractServiceImpl<Prestatio
             findAdherent(prestation);
 
             Prestation savedPrestation = prestationDao.save(prestation);
+            EtatPrestation etatPrestation = etatPrestationService.findByLibelle("En cours");
+            prestation.setEtatPrestation(etatPrestation);
 
             savePieceJointePrestations(savedPrestation, prestation.getPieceJointePrestations());
             result = savedPrestation;
