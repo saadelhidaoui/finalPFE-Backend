@@ -230,6 +230,16 @@ public class AdherentAdminServiceImpl extends AbstractServiceImpl<Adherent> impl
         return adherentDao.findByCin(cin);
     }
 
+    @Override
+    public Adherent findByReference(String reference) {
+        return adherentDao.findByReference(reference);
+    }
+
+    @Override
+    public Adherent findByPpr(String ppr) {
+        return adherentDao.findByPpr(ppr);
+    }
+
     private void findAssociatedLists(Adherent adherent) {
         if (adherent != null && adherent.getId() != null) {
             List<Conjoint> conjoints = conjointService.findByAdherentId(adherent.getId());

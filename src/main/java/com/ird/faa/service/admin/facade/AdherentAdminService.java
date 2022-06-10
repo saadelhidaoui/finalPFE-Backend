@@ -84,4 +84,8 @@ public interface AdherentAdminService extends AbstractService<Adherent,Long,Adhe
     Adherent desarchiver(Adherent adherent);
 
     Adherent findByCin(String cin);
+
+    Adherent findByReference(String reference);
+
+    Adherent findByPpr(String ppr);
 }

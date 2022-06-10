@@ -1,9 +1,12 @@
 package com.ird.faa.service.admin.facade;
 
+import java.io.IOException;
 import java.util.List;
 import com.ird.faa.bean.PieceJointeRendezVous;
+import com.ird.faa.bean.RendezVous;
 import com.ird.faa.ws.rest.provided.vo.PieceJointeRendezVousVo;
 import com.ird.faa.service.core.facade.AbstractService;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface PieceJointeRendezVousAdminService extends AbstractService<PieceJointeRendezVous,Long,PieceJointeRendezVousVo>{
 
@@ -34,4 +37,9 @@ public interface PieceJointeRendezVousAdminService extends AbstractService<Piece
     PieceJointeRendezVous archiver(PieceJointeRendezVous pieceJointeRendezVous) ;
     PieceJointeRendezVous desarchiver(PieceJointeRendezVous pieceJointeRendezVous);
 
+    RendezVous findByReference(String reference);
+
+    void uploadFile(MultipartFile file, String reference) throws IOException;
+
+    PieceJointeRendezVous getFile(Long id);
 }

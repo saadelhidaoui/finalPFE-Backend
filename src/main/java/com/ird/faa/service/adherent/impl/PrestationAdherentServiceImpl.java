@@ -2,6 +2,7 @@ package com.ird.faa.service.adherent.impl;
 
 import com.ird.faa.bean.*;
 import com.ird.faa.dao.PrestationDao;
+import com.ird.faa.security.common.SecurityUtil;
 import com.ird.faa.service.adherent.facade.*;
 import com.ird.faa.service.core.facade.ArchivableService;
 import com.ird.faa.service.core.impl.AbstractServiceImpl;
@@ -46,6 +47,7 @@ public class PrestationAdherentServiceImpl extends AbstractServiceImpl<Prestatio
     public List<Prestation> findAll() {
         String query = "SELECT o FROM Prestation o where 1=1 ";
         query += " ORDER BY o.niveauImportance";
+        query += SearchUtil.addConstraint("o", "o.prestation.reference", "=", SecurityUtil.getCurrentUser().getUsername());
         return entityManager.createQuery(query).getResultList();
     }
 

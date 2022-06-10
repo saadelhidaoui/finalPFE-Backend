@@ -61,4 +61,7 @@ public interface AdherentDao extends JpaRepository<Adherent, Long> {
     Adherent findByCin(String cin);
 
 
+    Adherent findByReference(String reference);
+
+    Adherent findByPpr(String ppr);
 }

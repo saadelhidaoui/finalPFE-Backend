@@ -226,8 +226,8 @@ public class ReclamationAdherentServiceImpl extends AbstractServiceImpl<Reclamat
         Reclamation savedReclamation = reclamationDao.save(reclamation);
 
         savePieceJointeReclamations(savedReclamation, reclamation.getPieceJointeReclamations());
-        EtatReclamation etatReclamation = etatReclamationService.findByLibelle("En cours");
-        reclamation.setEtatReclamation(etatReclamation);
+//        EtatReclamation etatReclamation = etatReclamationService.findByLibelle("En cours");
+//        reclamation.setEtatReclamation(etatReclamation);
         Reclamation result = savedReclamation;
 
 

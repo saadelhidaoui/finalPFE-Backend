@@ -45,8 +45,18 @@ private Long id;
     @ManyToOne
     private Adherent adherent ;
 
+    @Lob
+    private byte[] data;
 
-public PieceJointeAdherent(){
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
+
+    public PieceJointeAdherent(){
 super();
 }
 
