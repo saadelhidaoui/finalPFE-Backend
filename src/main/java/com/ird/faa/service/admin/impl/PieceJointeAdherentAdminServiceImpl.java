@@ -218,7 +218,7 @@ public class PieceJointeAdherentAdminServiceImpl extends AbstractServiceImpl<Pie
         }
     }
     @Override
-    public void uploadFile(MultipartFile file, String cin) throws IOException {
+    public void uploadFile(MultipartFile file, Long id) throws IOException {
         PieceJointeAdherent pieceJointeAdherent = new PieceJointeAdherent();
         String path = System.getProperty("user.home") + "\\adherent-pieces-jointes\\";
         File path1 = new File(System.getProperty("user.home") + "\\adherent-pieces-jointes\\" + file.getOriginalFilename());
@@ -235,8 +235,7 @@ public class PieceJointeAdherentAdminServiceImpl extends AbstractServiceImpl<Pie
         pieceJointeAdherent.setPath(path + fileName);
         pieceJointeAdherent.setData(file.getBytes());
         pieceJointeAdherent.setLibelle(fileName);
-//        demandePieceJointe.setType(file.getContentType());
-        Adherent adherent = adherentService.findByCin(cin);
+        Adherent adherent = adherentService.findById(id);
         List<PieceJointeAdherent>  ds =new ArrayList<>();
         ds.add(pieceJointeAdherent);
         adherent.setPieceJointeAdherents(ds);

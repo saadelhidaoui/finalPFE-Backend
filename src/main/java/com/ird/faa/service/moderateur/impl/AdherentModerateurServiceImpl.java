@@ -244,6 +244,11 @@ public Adherent findByIdWithAssociatedList(Long id){
     return adherent;
     }
 
+    @Override
+    public Adherent findByCin(String cin) {
+        return adherentDao.findByCin(cin);
+    }
+
     private void findAssociatedLists(Adherent adherent){
     if(adherent!=null && adherent.getId() != null) {
             List<Conjoint> conjoints = conjointService.findByAdherentId(adherent.getId());

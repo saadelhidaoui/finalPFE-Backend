@@ -83,4 +83,5 @@ public interface AdherentModerateurService extends AbstractService<Adherent,Long
     Adherent archiver(Adherent adherent) ;
     Adherent desarchiver(Adherent adherent);
 
+    Adherent findByCin(String cin);
 }

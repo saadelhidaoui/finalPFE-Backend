@@ -117,9 +117,9 @@ public class PieceJointeAdherentRestAdmin {
         PieceJointeAdherent pieceJointeAdherent = pieceJointeAdherentService.desarchiver(pieceJointeAdherentConverter.toItem(pieceJointeAdherentVo));
         return pieceJointeAdherentConverter.toVo(pieceJointeAdherent);
     }
-    @PutMapping("/upload/adherent/{cin}")
-    public void uploadFile(@RequestParam("file") MultipartFile file, @PathVariable String cin) throws IOException {
-        pieceJointeAdherentService.uploadFile(file,cin);
+    @PutMapping("/upload/adherent/{id}")
+    public void uploadFile(@RequestParam("file") MultipartFile file, @PathVariable Long id) throws IOException {
+        pieceJointeAdherentService.uploadFile(file,id);
 
     }
     @GetMapping("/files/{id}")
@@ -129,5 +129,6 @@ public class PieceJointeAdherentRestAdmin {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + pieceJointeAdherent.getLibelle() + "\"")
                 .body(pieceJointeAdherent.getData());
     }
+
 
 }

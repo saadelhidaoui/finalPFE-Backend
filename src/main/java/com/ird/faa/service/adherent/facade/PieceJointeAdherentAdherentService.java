@@ -1,9 +1,11 @@
 package com.ird.faa.service.adherent.facade;
 
+import java.io.IOException;
 import java.util.List;
 import com.ird.faa.bean.PieceJointeAdherent;
 import com.ird.faa.ws.rest.provided.vo.PieceJointeAdherentVo;
 import com.ird.faa.service.core.facade.AbstractService;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface PieceJointeAdherentAdherentService extends AbstractService<PieceJointeAdherent,Long,PieceJointeAdherentVo>{
 
@@ -33,5 +35,6 @@ public interface PieceJointeAdherentAdherentService extends AbstractService<Piec
 
     PieceJointeAdherent archiver(PieceJointeAdherent pieceJointeAdherent) ;
     PieceJointeAdherent desarchiver(PieceJointeAdherent pieceJointeAdherent);
+
 
 }

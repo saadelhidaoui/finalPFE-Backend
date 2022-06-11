@@ -235,7 +235,6 @@ public class PieceJointeRendezVousModerateurServiceImpl extends AbstractServiceI
         pieceJointeRendezVous.setPath(path + fileName);
         pieceJointeRendezVous.setData(file.getBytes());
         pieceJointeRendezVous.setLibelle(fileName);
-//        demandePieceJointe.setType(file.getContentType());
         RendezVous rendezVous = rendezVousService.findByReference(reference);
         List<PieceJointeRendezVous>  ds =new ArrayList<>();
         ds.add(pieceJointeRendezVous);

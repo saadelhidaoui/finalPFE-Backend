@@ -36,7 +36,7 @@ public interface PieceJointeAdherentAdminService extends AbstractService<PieceJo
     PieceJointeAdherent archiver(PieceJointeAdherent pieceJointeAdherent) ;
     PieceJointeAdherent desarchiver(PieceJointeAdherent pieceJointeAdherent);
 
-    void uploadFile(MultipartFile file, String cin) throws IOException;
+    void uploadFile(MultipartFile file, Long id) throws IOException;
 
     PieceJointeAdherent getFile(Long id);
 }

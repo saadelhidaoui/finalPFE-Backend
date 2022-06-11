@@ -92,4 +92,5 @@ public interface AdherentAdherentService extends AbstractService<Adherent, Long,
     Adherent findByEmail(String email);
     public int save2(AdherentVo adherentVo) throws ParseException;
 
+    Adherent findByCin(String cin);
 }

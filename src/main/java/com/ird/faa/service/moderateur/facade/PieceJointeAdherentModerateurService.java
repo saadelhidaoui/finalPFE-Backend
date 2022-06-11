@@ -1,9 +1,11 @@
 package com.ird.faa.service.moderateur.facade;
 
+import java.io.IOException;
 import java.util.List;
 import com.ird.faa.bean.PieceJointeAdherent;
 import com.ird.faa.ws.rest.provided.vo.PieceJointeAdherentVo;
 import com.ird.faa.service.core.facade.AbstractService;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface PieceJointeAdherentModerateurService extends AbstractService<PieceJointeAdherent,Long,PieceJointeAdherentVo>{
 
@@ -34,4 +36,7 @@ public interface PieceJointeAdherentModerateurService extends AbstractService<Pi
     PieceJointeAdherent archiver(PieceJointeAdherent pieceJointeAdherent) ;
     PieceJointeAdherent desarchiver(PieceJointeAdherent pieceJointeAdherent);
 
+    void uploadFile(MultipartFile file, Long id) throws IOException;
+
+    PieceJointeAdherent getFile(Long id);
 }
